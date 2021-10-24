@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:travel_app/router.dart';
+import 'package:travel_app/route/router.gr.dart';
 
 import 'screens/categories/categories_screen.dart';
 
@@ -14,8 +14,13 @@ class MyMaterialApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final _router = AppRouter();
+
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      routerDelegate: _router.delegate(),
+      routeInformationProvider: _router.routeInfoProvider(),
+      routeInformationParser: _router.defaultRouteParser(),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -27,7 +32,6 @@ class MyMaterialApp extends StatelessWidget {
       ],
       locale: const Locale.fromSubtags(languageCode: 'ar'),
       title: 'Travel app',
-      home: const CategoriesScreen(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.deepPurple,
@@ -36,7 +40,6 @@ class MyMaterialApp extends StatelessWidget {
         fontFamily: 'Noto Kufi',
         splashColor: Colors.amber.withOpacity(0.2),
       ),
-      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
