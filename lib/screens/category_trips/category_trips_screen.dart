@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:travel_app/models/category_model.dart';
+part of 'widgets_barrel.dart';
 
 class CategoryTripsScreen extends StatelessWidget {
   final CategoryModel model;
@@ -14,6 +12,7 @@ class CategoryTripsScreen extends StatelessWidget {
           model.title,
         ),
       ),
+      body: const _TripCard(),
     );
   }
 }

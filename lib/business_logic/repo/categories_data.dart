@@ -1,4 +1,4 @@
-import 'package:travel_app/models/category_model.dart';
+import '../models/category_model.dart';
 
 const categories = [
   CategoryModel(

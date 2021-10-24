@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+part of '../widgets_barrel.dart';
 
-class CategoriesScreenAppBar extends StatelessWidget
+class _CategoriesScreenAppBar extends StatelessWidget
     implements PreferredSizeWidget {
-  const CategoriesScreenAppBar({Key? key}) : super(key: key);
+  const _CategoriesScreenAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

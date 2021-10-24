@@ -11,9 +11,9 @@
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:flutter/material.dart' as _i4;
 
-import '../models/category_model.dart' as _i5;
-import '../screens/categories/categories_screen.dart' as _i1;
-import '../screens/category_trips/category_trips_screen.dart' as _i2;
+import '../business_logic/models/category_model.dart' as _i5;
+import '../screens/categories/widgets_barrel.dart' as _i1;
+import '../screens/category_trips/widgets_barrel.dart' as _i2;
 
 class AppRouter extends _i3.RootStackRouter {
   AppRouter([_i4.GlobalKey<_i4.NavigatorState>? navigatorKey])

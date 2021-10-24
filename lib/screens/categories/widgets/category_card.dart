@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+part of '../widgets_barrel.dart';
 
-class CategoryCard extends StatelessWidget {
+class _CategoryCard extends StatelessWidget {
   final String title;
   final String imageUrl;
   final VoidCallback onTap;
-  const CategoryCard(
+  const _CategoryCard(
       {Key? key,
       required this.title,
       required this.imageUrl,

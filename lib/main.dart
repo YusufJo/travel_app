@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:travel_app/route/router.gr.dart';
 
-import 'screens/categories/categories_screen.dart';
-
 void main() {
   runApp(const MyMaterialApp());
 }
