@@ -1,18 +1,34 @@
 part of 'widgets_barrel.dart';
 
 class CategoryTripsScreen extends StatelessWidget {
-  final CategoryModel model;
-  const CategoryTripsScreen({Key? key, required this.model}) : super(key: key);
+  final CategoryModel categoryModel;
+  const CategoryTripsScreen({Key? key, required this.categoryModel})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final filteredTrips = tripsData
+        .where((element) => element.categories.contains(categoryModel.id))
+        .toList();
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          model.title,
+      appBar: _AppBar(
+        title: categoryModel.title,
+      ),
+      body: ListView.builder(
+        padding: const EdgeInsets.all(5),
+        itemCount: filteredTrips.length,
+        itemBuilder: (_, index) => _TripCard(
+          title: filteredTrips[index].title,
+          imageUrl: filteredTrips[index].imageUrl,
+          duration: filteredTrips[index].duration,
+          season: filteredTrips[index].season,
+          tripType: filteredTrips[index].tripType,
+          onTap: () => GetIt.I
+              .get<AppRouter>()
+              .push(TripDetailsScreenRoute(title: filteredTrips[index].title)),
         ),
       ),
-      body: const _TripCard(),
     );
   }
 }

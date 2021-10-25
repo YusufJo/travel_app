@@ -1,15 +1,13 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
+import 'package:built_value/built_value.dart';
 
-part 'category_model.freezed.dart';
 part 'category_model.g.dart';
 
-@freezed
-class CategoryModel with _$CategoryModel {
-  const factory CategoryModel(
-      {required String id,
-      required String title,
-      required String imageUrl}) = _CategoryModel;
-  factory CategoryModel.fromJson(Map<String, dynamic> json) =>
-      _$CategoryModelFromJson(json);
+abstract class CategoryModel
+    implements Built<CategoryModel, CategoryModelBuilder> {
+  String get id;
+  String get title;
+  String get imageUrl;
+  CategoryModel._();
+  factory CategoryModel([void Function(CategoryModelBuilder) updates]) =
+      _$CategoryModel;
 }

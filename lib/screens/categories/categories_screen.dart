@@ -10,11 +10,11 @@ class CategoriesScreen extends StatelessWidget {
       body: GridView.builder(
         itemCount: categories.length,
         itemBuilder: (_, index) => _CategoryCard(
-          onTap: () => AutoRouter.of(context).push(
-            CategoryTripsScreenRoute(
-              model: categories[index],
-            ),
-          ),
+          onTap: () => GetIt.I.get<AppRouter>().push(
+                CategoryTripsScreenRoute(
+                  categoryModel: categories[index],
+                ),
+              ),
           title: categories[index].title,
           imageUrl: categories[index].imageUrl,
         ),
