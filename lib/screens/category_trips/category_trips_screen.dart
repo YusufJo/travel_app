@@ -18,15 +18,15 @@ class CategoryTripsScreen extends StatelessWidget {
       body: ListView.builder(
         padding: const EdgeInsets.all(5),
         itemCount: filteredTrips.length,
-        itemBuilder: (_, index) => _TripCard(
-          title: filteredTrips[index].title,
-          imageUrl: filteredTrips[index].imageUrl,
-          duration: filteredTrips[index].duration,
-          season: filteredTrips[index].season,
-          tripType: filteredTrips[index].tripType,
-          onTap: () => GetIt.I
-              .get<AppRouter>()
-              .push(TripDetailsScreenRoute(title: filteredTrips[index].title)),
+        itemBuilder: (_, index) => InharitedRouteWidget(
+          route: TripDetailsScreenRoute(title: filteredTrips[index].title),
+          child: _TripCard(
+            title: filteredTrips[index].title,
+            imageUrl: filteredTrips[index].imageUrl,
+            duration: filteredTrips[index].duration,
+            season: filteredTrips[index].season,
+            tripType: filteredTrips[index].tripType,
+          ),
         ),
       ),
     );

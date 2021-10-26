@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 import 'package:travel_app/business_logic/repo/categories_data.dart';
+import 'package:travel_app/route/inharited_routes_widget.dart';
 import 'package:travel_app/route/router.gr.dart';
 
 part './categories_screen.dart';

@@ -6,7 +6,6 @@ class _TripCard extends StatelessWidget {
   final int duration;
   final Season season;
   final TripType tripType;
-  final VoidCallback onTap;
   const _TripCard({
     Key? key,
     required this.title,
@@ -14,11 +13,11 @@ class _TripCard extends StatelessWidget {
     required this.duration,
     required this.season,
     required this.tripType,
-    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final route = InharitedRouteWidget.of<TripDetailsScreenRoute>(context);
     return Card(
       clipBehavior: Clip.hardEdge,
       shape: const RoundedRectangleBorder(
@@ -70,7 +69,7 @@ class _TripCard extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: onTap,
+                onTap: route.navigate,
               ),
             ),
           )

@@ -3,16 +3,15 @@ part of '../widgets_barrel.dart';
 class _CategoryCard extends StatelessWidget {
   final String title;
   final String imageUrl;
-  final VoidCallback onTap;
-  const _CategoryCard(
-      {Key? key,
-      required this.title,
-      required this.imageUrl,
-      required this.onTap})
-      : super(key: key);
+  const _CategoryCard({
+    Key? key,
+    required this.title,
+    required this.imageUrl,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final route = InharitedRouteWidget.of<CategoryTripsScreenRoute>(context);
     return Card(
       clipBehavior: Clip.hardEdge,
       shape: const RoundedRectangleBorder(
@@ -30,7 +29,7 @@ class _CategoryCard extends StatelessWidget {
           Material(
             color: Colors.transparent,
             child: InkWell(
-              onTap: onTap,
+              onTap: route.navigate,
             ),
           )
         ],
