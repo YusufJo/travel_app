@@ -27,10 +27,10 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  auto_route: ^3.0.2
+  auto_route: ^3.0.4
   built_collection: ^5.1.1
   built_value: ^8.1.2
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.3
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -41,7 +41,7 @@ dev_dependencies:
   auto_route_generator: ^3.0.1
   build_runner: ^2.1.4
   built_value_generator: ^8.1.2
-  flutter_lints: ^1.0.0
+  flutter_lints: ^1.0.4
   flutter_test:
     sdk: flutter
 
