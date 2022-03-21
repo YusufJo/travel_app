@@ -1,0 +1,19 @@
+targets:
+  $default:
+    builders:
+      freezed|freezed:
+        enabled: true
+        generate_for:
+          include:
+            - lib/core/util/either/either.dart
+            - lib/features/*/data/models/**.dart
+            - lib/features/*/domain/entities/**.dart
+      auto_route_generator|autoRouteGenerator:
+        enabled: true
+        generate_for:
+          include:
+            - lib/features/trips/presentation/route/router.dart
+
+
+
+
